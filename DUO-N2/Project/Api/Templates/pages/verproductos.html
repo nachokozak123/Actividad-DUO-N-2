@@ -1,0 +1,39 @@
+{% extends "Base.html" %}
+
+{% block cuerpo %}
+
+<div class="buscador">
+    <form method="get">
+        <input type="text" name="buscar" placeholder="🔍 Buscar producto...">
+    </form>
+</div>
+
+<div class="contenedor-productos">
+
+    {% for i in listaProductos %}
+    <div class="verprod">
+
+        <h2>{{i.Nombre}}</h2>
+        <p>$ {{i.Precio}}</p>
+        <p>{{i.Descripcion}}</p>
+
+        {% if i.imagen %}
+        <img src="{{ i.imagen.url }}">
+        {% endif %}
+
+        
+        <a href="#" class="btn-comprar">Comprar</a>
+
+        {% if user.is_superuser %}
+        <div class="botones">
+            <a href="{% url 'editar' i.Codigo %}">Editar</a>
+            <a href="{% url 'eliminar' i.Codigo %}">Eliminar</a>
+        </div>
+        {% endif %}
+
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

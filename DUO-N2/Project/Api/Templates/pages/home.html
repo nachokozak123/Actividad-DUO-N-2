@@ -1,0 +1,54 @@
+{% extends "Base.html" %}
+{% load static %}
+
+{% block cuerpo %}
+
+<div class="main-card">
+
+    
+    <section class="hero">
+
+        <div class="hero-text">
+            <h1>DC STORE </h1>
+            <p>Explorá el universo de tus héroes favoritos</p>
+        </div>
+
+
+    </section>
+
+    <section class="seccion-cards">
+
+    <div class="card-home">
+        <img src="{% static 'src/Productos/batman.jpg' %}">
+        <h3>Batman</h3>
+        <p>Protector de Gotham</p>
+    </div>
+
+    <div class="card-home">
+        <img src="{% static 'src/Productos/superman.jpg' %}">
+        <h3>Superman</h3>
+        <p>El hombre de acero</p>
+    </div>
+
+    <div class="card-home">
+        <img src="{% static 'src/Productos/flash.jpg' %}">
+        <h3>Flash</h3>
+        <p>El más rápido</p>
+    </div>
+
+</section>
+    
+    <section style="margin-top:40px; text-align:center;">
+
+        <h2 style="margin-bottom:10px;">🔥 Colección DC</h2>
+        <p>Descubre los Funko Pop de tus heros y villanos de Favoritos</p>
+
+        <a href="{% url 'ver' %}" class="btn-home" style="margin-top:15px;">
+            Explorar tienda
+        </a>
+
+    </section>
+
+</div>
+
+{% endblock %}

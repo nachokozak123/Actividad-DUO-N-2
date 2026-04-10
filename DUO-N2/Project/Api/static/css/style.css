@@ -1,0 +1,391 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --blanco: #ffffff;
+    --celeste: #00b4ff;
+    --celeste-hover: #0096c7;
+    --negro-suave: rgba(0, 0, 0, 0.6);
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.8)),
+        url('../src/fondo_dc.jpg') center/cover no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url('../src/fondonav.avif') center/cover;
+
+    color: white;
+    border-bottom: 2px solid var(--celeste);
+}
+
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--celeste);
+    animation: flotar 3s infinite;
+}
+
+.logo-box p {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+.menu a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    position: relative;
+    font-weight: bold;
+}
+
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background: var(--celeste);
+    transition: 0.3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.main-card {
+    width: 95%;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    padding: 30px;
+    animation: aparecer 0.5s ease;
+}
+
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    color: var(--celeste);
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #333;
+}
+
+
+.btn-home,
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, var(--celeste), #0077ff);
+    color: white;
+    border: none;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn-home:hover,
+.boton:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 15px var(--celeste);
+}
+
+
+.buscador {
+    text-align: center;
+    margin-bottom: 20px;
+    bottom: 270px;
+    left: 20px;
+    position: relative;
+}
+
+.buscador input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    border: 2px solid var(--celeste);
+}
+
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+.verprod {
+    width: 250px;
+    background: white;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    transition: 0.3s;
+    animation: pop 0.3s ease;
+}
+
+.verprod:hover {
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow: 0 0 20px var(--celeste);
+}
+
+.verprod img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+
+.botones {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.botones a {
+    padding: 5px 10px;
+    border: 1px solid var(--celeste);
+    border-radius: 5px;
+    color: var(--celeste);
+    text-decoration: none;
+}
+
+.botones a:hover {
+    background: var(--celeste);
+    color: white;
+}
+
+
+.seccion-cards {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card-home {
+    width: 280px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card-home img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.card-home h3 {
+    color: var(--celeste);
+    margin-top: 10px;
+}
+
+.card-home p {
+    padding: 10px;
+}
+
+.card-home:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px var(--celeste);
+}
+
+
+.form-container {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.form-img,
+.form-box {
+    width: 50%;
+}
+
+.form-img img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--celeste);
+}
+
+
+
+.footer {
+    background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url('../src/fondonav.avif') center/cover;
+
+    color: white;
+    padding: 20px 40px;
+}
+
+
+.footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.footer-redes {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-redes img {
+    width: 30px;
+    height: 30px;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+
+.footer-redes img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 8px var(--celeste));
+}
+
+
+.footer-texto {
+    text-align: right;
+    font-size: 14px;
+}
+
+
+@media (max-width: 768px) {
+    .footer-contenido {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .footer-texto {
+        text-align: center;
+    }
+}
+
+
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pop {
+    from { transform: scale(0.8); }
+    to { transform: scale(1); }
+}
+
+@keyframes flotar {
+    50% { transform: translateY(-5px); }
+}
+
+
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .form-container {
+        flex-direction: column;
+    }
+
+    .form-img,
+    .form-box {
+        width: 100%;
+    }
+
+    .contenedor-productos {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.btn-comprar {
+    display: block;
+    margin: 10px auto 0;
+    padding: 8px 15px;
+    width: 80%;
+    text-align: center;
+    background: linear-gradient(45deg, var(--celeste), #0077ff);
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+.btn-comprar:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px var(--celeste);
+}

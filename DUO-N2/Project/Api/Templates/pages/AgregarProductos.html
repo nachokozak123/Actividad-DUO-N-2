@@ -1,0 +1,40 @@
+{% extends "Base.html" %}
+{% load static %}
+
+{% block cuerpo %}
+
+<div class="main-card">
+
+    <div class="form-container">
+
+        
+        <div class="form-img">
+            <img src="{% static 'src/formdc.jpg' %}">
+        </div>
+
+        
+        <form method="post" enctype="multipart/form-data" class="form-box">
+            {% csrf_token %}
+
+            <h2>Agregar Producto</h2>
+
+            {% for field in Formularios %}
+                <div class="form-group">
+                    <label>{{ field.label }}</label>
+                    {{ field }}
+
+                    {% if field.errors %}
+                        <small class="error">{{ field.errors }}</small>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <button type="submit" class="boton">Guardar Producto</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

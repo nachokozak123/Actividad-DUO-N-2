@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DC Store</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <a href="{% url 'Inicio' %}" class="logo-box">
+            <img src="{% static 'src/logo.png' %}" class="logo">
+            <p>DC STORE</p>
+        </a>
+
+        <nav class="menu">
+            {% if user.is_superuser %}
+            <a href="{% url 'agregar' %}">Agregar Producto</a>
+            {% endif %}
+            <a href="{% url 'ver' %}">Productos</a>
+        </nav>
+    </header>
+
+    <main>
+
+            {% block cuerpo %}
+            {% endblock %}
+        </div>
+
+    </main>
+
+    <footer class="footer">
+
+    <div class="footer-contenido">
+
+        
+        <div class="footer-redes">
+            <a href="https://instagram.com" target="_blank">
+                <img src="{% static 'src/redes/ig.jfif' %}" alt="Instagram">
+            </a>
+
+            <a href="https://facebook.com" target="_blank">
+                <img src="{% static 'src/redes/face.png' %}" alt="Facebook">
+            </a>
+
+            <a href="https://twitter.com" target="_blank">
+                <img src="{% static 'src/redes/x.jfif' %}" alt="Twitter">
+            </a>
+        </div>
+
+        
+        <div class="footer-texto">
+            <p><strong>DC Store</strong></p>
+            <p>Proyecto desarrollado por:</p>
+            <p>Luna Maldonado & Ignacio Kozak</p>
+            <p>Tienda online de productos del universo DC Comics</p>
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>
